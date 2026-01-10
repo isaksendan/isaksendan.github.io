@@ -22,12 +22,36 @@
             line-height: .5;
         }
     </style>
+    <script>
+        function toggleAboutMe() {
+            let aboutMeElement = document.getElementById("aboutMeText");
+            let aboutMeButton = document.querySelector(".about-me button");
+            
+            if (aboutMeElement.innerHTML === "") {
+                aboutMeElement.innerHTML = document.getElementById("aboutMeText").dataset.text;
+                aboutMeButton.innerHTML = "Hide";
+            } else {
+                aboutMeElement.innerHTML = "";
+                aboutMeButton.innerHTML = "About me";
+            }
+        }
+    </script>
 </head>
+
 <body>
     <header>
         <h1>Dan Isaksen</h1>
         <p>Hi! I'm Dan Isaksen, a mathematician.</p>
     </header>
+
+    <br><br>
+
+    <div class="about-me">
+        <button onclick="toggleAboutMe()">About me</button>
+        <div id="aboutMeText" data-text=" I grew up in Calabasas, California, USA. I have lived in California, Massachusetts, Ohio, Minnesota, Illinois, Indiana, and Michigan, as well as in Germany.
+        <br><br>Currently I live with my family in the Detroit metropolitan area in Michigan, USA.  I like superhero movies, science fiction books, historical and geographical trivia, and watching baseball. I grew up a Dodgers fan, but I am now a fully assimilated Tigers fan.
+        "></div>
+    </div>
     
     <div class="contact-me">
         <img src="images/isaksen.jpg" width="200">
