@@ -17,9 +17,13 @@
 
         .contact-me {
             position: absolute;
-            right: 20px;
+            right: 40px;
             top: 20px;
             line-height: .5;
+        }
+        
+        .headshot-image {
+            text-align: center;
         }
     </style>
     <script>
@@ -43,9 +47,7 @@
         <h1>Dan Isaksen</h1>
         <p>Hi! I'm Dan Isaksen, a mathematician.</p>
     </header>
-
-    <br><br>
-
+    
     <div class="about-me">
         <button onclick="toggleAboutMe()">About me</button>
         <div id="aboutMeText" data-text=" I grew up in Calabasas, California, USA. I have lived in California, Massachusetts, Ohio, Minnesota, Illinois, Indiana, and Michigan, as well as in Germany.
@@ -54,11 +56,11 @@
     </div>
     
     <div class="contact-me">
-        <img src="images/isaksen.jpg" width="200">
+        <div class="headshot-image">
+            <img src="images/isaksen.jpg" width="200">
+        </div>
         <h3>Contact Me</h3>
-        <p>
-            E-mail: <a href="https://mail.google.com/mail/u/0/?to=isaksen.dan@gmail.com&tf=cm" target="_blank">isaksen.dan@gmail.com</a>
-        </p>
+        <p><b>E-mail:</b> isaksen.dan@gmail.com</p>
     </div>
     
 <!--
