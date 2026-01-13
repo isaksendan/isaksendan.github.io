@@ -63,10 +63,12 @@
         }
     </style>
     <script>                
-        function toggleAboutMe() {
+        function gotoSection(text,title) {
             let mainContentTextElement = document.getElementById("main-content-text");
+            let mainContentTitleElement = document.getElementById("main-content-title");
             
-            mainContentTextElement.innerHTML = mainContentTextElement.dataset.text;
+            mainContentTextElement.innerHTML = mainContentTextElement.dataset[text];
+            mainContentTitleElement.innerHTML = mainContentTitleElement.dataset[title];
         }
     </script>
 </head>
@@ -81,26 +83,34 @@
 
             <div class="sidebar-separator"></div>
             
-            <div class="about-me">
-                <button onclick="toggleAboutMe()">About me</button>
+            <div class="buttons">
+                <button onclick="gotoSection('my_research_text', 'my_research_title')">My research</button><br>
+                <button onclick="gotoSection()">Adams Charts</button><br>
+                <button onclick="gotoSection('about_me_text', 'about_me_title')">About me</button><br>
             </div>
         </div>
         
     </div>
         
     <div class="main-content">
-        <div class="main-content-title" id="main-content-title">
+        <div class="main-content-title" id="main-content-title"
+            data-about_me_title="About me"
+            data-my_research_title="My Research">
             <b>
-                About me
+                Title
             </b>
         </div>
 
         <br>
-        <div class="main-content-text" id="main-content-text" data-text="I grew up in Calabasas, California, USA.
+        <div class="main-content-text" id="main-content-text" data-about_me_text="I grew up in Calabasas, California, USA.
             I have lived in California, Massachusetts, Ohio, Minnesota, Illinois, Indiana, and Michigan, as well as in Germany.
-            <br><br>Currently I live with my family in the Detroit metropolitan area in Michigan, USA.
+            <p>Currently I live with my family in the Detroit metropolitan area in Michigan, USA.
             I like superhero movies, science fiction books, historical and geographical trivia, and scoring baseball games.
-            I grew up a Dodgers fan, but I am now a fully assimilated Tigers fan.">
+            I grew up a Dodgers fan, but I am now a fully assimilated Tigers fan."
+            data-my_research_text="My main research interest is a long-term project to make fundamental computations in motivic homotopy theory.
+            This research is supported by a grant from the National Science Foundation. 
+            This page summarizes my research work for non-experts. 
+            If you would like more detail, see my pages on motivic homotopy theory and other research interests.">
             main content
         </div>
 
