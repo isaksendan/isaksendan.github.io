@@ -12,32 +12,34 @@
             padding: 20px;
             line-height: 1.6;
         }
-        h1 { color: #333; }
         a { color: #0366d6; }
 
         .contact-me {
             position: absolute;
-            right: 40px;
-            top: 20px;
+            right: 20px;
+            top: 320px;
             line-height: .5;
         }
         
         .headshot-image {
+            position: absolute;
+            top: 20px;
+            right: 40px;
             text-align: center;
         }
 
         .sidebar {
             position: absolute;
             top: 0px;
-            left: 0px;
+            left:  0px;
             height: 100%;
             width: 230px;
-            
-            background-color: rgba(26, 88, 48, 0.3)
+            background-color: rgba(160, 160, 160, 1)
         }
 
         .sidebar-content {
             margin: 20px;
+            color: rgb(0, 0, 0);
         }
 
         .sidebar-separator {
@@ -46,23 +48,30 @@
             left: 230px;
             width: 3px;
             height: 100vh;
-            background-color: rgba(0, 0, 0, 0.3)
+            background-color: rgba(0, 0, 0, 0.3);
         }
 
         .main-content {
             position: absolute;
-            margin: 20px;
-            top: 0px;
             left: 250px;
-            width: 650px;
+            max-width: 100%;
+            right: 300px;
         }
 
         .main-content-title {
             font-size: 36px;
             text-align: center;
         }
+
+        .buttons {
+            color: rgb(0, 0, 0);
+        }
+
+        .dan-isaksen {
+            font-size: 30px;
+        }
     </style>
-    <script>                
+    <script>    
         function gotoSection(text,title) {
             let mainContentTextElement = document.getElementById("main-content-text");
             let mainContentTitleElement = document.getElementById("main-content-title");
@@ -73,20 +82,22 @@
     </script>
 </head>
 
-<body>
+<body onload="gotoSection('about_me_text', 'about_me_title')">
     <div class="sidebar">
         <div class="sidebar-content">
             <header>
-                <h1>Dan Isaksen</h1>
-                <p>Hi! I'm Dan Isaksen, a mathematician.</p>
+                <span class="dan-isaksen"><b>Dan Isaksen</b></span>
+                <span class="description">Professor of mathematics</span>
+                <br><br>
             </header>
 
             <div class="sidebar-separator"></div>
             
             <div class="buttons">
-                <button onclick="gotoSection('my_research_text', 'my_research_title')">My research</button><br>
-                <button onclick="gotoSection()">Adams Charts</button><br>
-                <button onclick="gotoSection('about_me_text', 'about_me_title')">About me</button><br>
+                <button type="button" onclick="gotoSection('motivic_homotopy_theory_text', 'motivic_homotopy_theory_title')">Motivic homotopy theory</button><br>
+                <button type="button" onclick="gotoSection('other_research_interests_text', 'other_research_interests_title')">Other research interests</button><br>
+                <button type="button" onclick="gotoSection('algebraic_topology_journals_text', 'algebraic_topology_journals_title')">Algebraic topology journals</button>
+                <button type="button" onclick="gotoSection('about_me_text', 'about_me_title')">About me</button><br>
             </div>
         </div>
         
@@ -95,34 +106,60 @@
     <div class="main-content">
         <div class="main-content-title" id="main-content-title"
             data-about_me_title="About me"
-            data-my_research_title="My Research">
-            <b>
-                Title
-            </b>
+            data-motivic_homotopy_theory_title="Motivic homotopy theory"
+            data-other_research_interests_title="Other research interests"
+            data-algebraic_topology_journals_title="Algebraic topology journals">
         </div>
 
         <br>
-        <div class="main-content-text" id="main-content-text" data-about_me_text="I grew up in Calabasas, California, USA.
+        <div class="main-content-text" id="main-content-text"
+            data-about_me_text="I grew up in Calabasas, California, USA.
             I have lived in California, Massachusetts, Ohio, Minnesota, Illinois, Indiana, and Michigan, as well as in Germany.
-            <p>Currently I live with my family in the Detroit metropolitan area in Michigan, USA.
-            I like superhero movies, science fiction books, historical and geographical trivia, and scoring baseball games.
-            I grew up a Dodgers fan, but I am now a fully assimilated Tigers fan."
-            data-my_research_text="My main research interest is a long-term project to make fundamental computations in motivic homotopy theory.
-            This research is supported by a grant from the National Science Foundation. 
-            This page summarizes my research work for non-experts. 
-            If you would like more detail, see my pages on motivic homotopy theory and other research interests.">
-            main content
+            <p>Currently I live with my family in the Detroit metropolitan area in Michigan, USA. I like superhero movies, 
+            science fiction books, historical and geographical trivia, and scoring baseball games. I grew up a Dodgers fan, 
+            but I am now a fully assimilated Tigers fan."
+            data-motivic_homotopy_theory_text="My research revolves around the interaction between homotopy theory and algebra.
+            One of my primary interests is motivic homotopy theory, which is a blend of classical homotopy theory and algebraic geometry.
+            The basic goal of this subject is to solve problems in algebraic geometry using traditional methods of algebraic topology.
+            <p>Currently, my main interest is a long-term project to make fundamental computations in motivic homotopy theory.
+            This research is supported by a grant from the National Science Foundation. I work extensively with the motivic version
+            of the Adams spectral sequence, especially over C and R. Massey products and Toda brackets are the essential computational
+            tools that I use to deduce information about the behavior of this spectral sequence, and ultimately about stable homotopy groups.
+            Computer calculations play a major role in this project. My collaborators on this project are Eva Belmont, Dan Dugger,
+            Bogdan Gheorghe, Bert Guillou, Hana Kong, Achim Krause, Guozhen Wang, and Zhouli Xu."
+            data-other_research_interests_text="In conjunction with Dan Dugger, I have generalized results about sums-of-squares
+            formulas over fields of characteristic zero so that they apply over arbitrary fields of characteristic not equal to 2.
+            The basic idea is to replace techniques involving cohomology theories for topological spaces with techniques involving
+            algebraic cohomology theories.
+            <p> I have also spent some time with Cayley-Dickson algebras. These are finite-dimensional
+            non-associative algebras that generalize the real numbers, the complex numbers, the quaternions, and the octonions.
+            In conjunction with Dan Dugger, Daniel Biss, and Dan Christensen, we have attempted to classify the zero-divisors in
+            Cayley-Dickson algebras.
+            <p> I used to be interested in abstract homotopy theory (i.e., model categories), especially
+            with respect to homotopy theories for pro-objects.  However, I am no longer actively working on problems in this field."
+            data-algebraic_topology_journals_text="One key to successfully publishing a research article is to submit your work to
+            an editor whose mathematical interests are close to the topic of your submission.  This page lists the names of journals
+            whose editorial board includes at least one algebraic topologist.  I have found this list to be very useful in deciding
+            where to submit an article, and maybe others will find it helpful as well.  Please do not interpret this page as an
+            endorsement or recommendation of any particular journal.
+            <p> I compiled the list by searching through the editorial boards
+            on journal websites. The selection criteria are somewhat arbitrary, so it is likely that there are mistakes and
+            oversights.  Please send corrections or updates to Dan Isaksen at isaksen.dan@gmail.com.  Special thanks go to Bogdan
+            Gheorghe and Gustavo Granja for their help in maintaining the list.  This page was last updated in April 2025."
+            data-my_research_text="">
         </div>
 
     </div>
 
     <div class="contact-me">
-        <div class="headshot-image">
-            <img src="images/isaksen.jpg" width="200">
-        </div>
         <h3>Contact Me</h3>
         <p><b>E-mail:</b> isaksen.dan@gmail.com</p>
     </div>
+
+    <div class="headshot-image">
+        <img src="images/isaksen.jpg" width="200">
+    </div>
+    
     
     
     
