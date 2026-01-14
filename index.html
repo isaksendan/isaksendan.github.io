@@ -71,7 +71,24 @@
             font-size: 30px;
         }
     </style>
-    <script>    
+    <script>
+        function adjustLayout() {
+            let width = window.innerWidth;
+            
+            let headshot = document.getElementById("headshot-image");
+            let contact = document.getElementById("contact-me");
+            
+            if (width < 900) {
+                headshot.style.display = "none";
+                contact.style.display = "none";
+            } else {
+                headshot.style.display = "block";
+                contact.style.display = "block";
+            }
+        }
+        window.addEventListener("load", adjustLayout);
+        window.addEventListener("resize", adjustLayout)
+
         function gotoSection(text,title) {
             let mainContentTextElement = document.getElementById("main-content-text");
             let mainContentTitleElement = document.getElementById("main-content-title");
@@ -151,12 +168,12 @@
 
     </div>
 
-    <div class="contact-me">
+    <div class="contact-me" id="contact-me">
         <h3>Contact Me</h3>
         <p><b>E-mail:</b> isaksen.dan@gmail.com</p>
     </div>
 
-    <div class="headshot-image">
+    <div class="headshot-image" id="headshot-image">
         <img src="images/isaksen.jpg" width="200">
     </div>
     
