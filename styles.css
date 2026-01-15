@@ -5,27 +5,28 @@ body {
     padding: 20px;
     line-height: 1.6;
 }
+
 a { color: #0366d6; }
 
 .contact-me {
-    position: absolute;
+    position: fixed;
     right: 20px;
     top: 320px;
     line-height: .5;
 }
 
 .headshot-image {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 40px;
     text-align: center;
 }
 
 .sidebar {
-    position: absolute;
+    position: fixed;
     top: 0px;
     left:  0px;
-    height: 100%;
+    height: 100vh;
     width: 230px;
     background-color: rgba(160, 160, 160, 1)
 }
@@ -33,6 +34,15 @@ a { color: #0366d6; }
 .sidebar-content {
     margin: 20px;
     color: rgb(0, 0, 0);
+}
+
+.sidebar-email {
+    line-height: 1;
+    position: absolute;
+    left: 0px;
+    bottom: 20px;
+    margin: 020px;
+    display: none;
 }
 
 .sidebar-separator {
@@ -49,6 +59,7 @@ a { color: #0366d6; }
     left: 250px;
     max-width: 100%;
     right: 300px;
+    margin-bottom: 40px;
 }
 
 .main-content-title {

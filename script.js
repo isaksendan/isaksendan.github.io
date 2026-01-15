@@ -4,15 +4,18 @@ function adjustLayout() {
     let headshot = document.getElementById("headshot-image");
     let contact = document.getElementById("contact-me");
     let mainContent = document.querySelector(".main-content");
+    let sidebarEmail = document.getElementById("sidebar-email");
     
     if (width < 900) {
         headshot.style.display = "none";
         contact.style.display = "none";
         mainContent.style.right = "20px";
+        sidebarEmail.style.display = "block";
     } else {
         headshot.style.display = "block";
         contact.style.display = "block";
-        mainContent.style.right = "300px"
+        mainContent.style.right = "300px";
+        sidebarEmail.style.display = "none";
     }
 }
 adjustLayout();
