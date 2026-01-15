@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0px;
+    padding: 20px;
+    line-height: 1.6;
+}
+a { color: #0366d6; }
+
+.contact-me {
+    position: absolute;
+    right: 20px;
+    top: 320px;
+    line-height: .5;
+}
+
+.headshot-image {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    text-align: center;
+}
+
+.sidebar {
+    position: absolute;
+    top: 0px;
+    left:  0px;
+    height: 100%;
+    width: 230px;
+    background-color: rgba(160, 160, 160, 1)
+}
+
+.sidebar-content {
+    margin: 20px;
+    color: rgb(0, 0, 0);
+}
+
+.sidebar-separator {
+    position: absolute;
+    top: 0px;
+    left: 230px;
+    width: 3px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.main-content {
+    position: absolute;
+    left: 250px;
+    max-width: 100%;
+    right: 300px;
+}
+
+.main-content-title {
+    font-size: 36px;
+    text-align: center;
+}
+
+.buttons {
+    color: rgb(0, 0, 0);
+}
+
+.dan-isaksen {
+    font-size: 30px;
+}
+
+
+
+
+
