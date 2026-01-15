@@ -3,7 +3,6 @@ function adjustLayout() {
     
     let headshot = document.getElementById("headshot-image");
     let contact = document.getElementById("contact-me");
-    let mainContent = document.querySelector(".main-content");
     let sidebarEmail = document.getElementById("sidebar-email");
     
     if (width < 900) {
@@ -14,7 +13,6 @@ function adjustLayout() {
     } else {
         headshot.style.display = "block";
         contact.style.display = "block";
-        mainContent.style.right = "300px";
         sidebarEmail.style.display = "none";
     }
 }
@@ -28,6 +26,29 @@ function gotoSection(text,title) {
     mainContentTextElement.innerHTML = mainContentTextElement.dataset[text];
     mainContentTitleElement.innerHTML = mainContentTitleElement.dataset[title];
 }
+
+function toggleSidebar() {
+    let sidebarElement = document.getElementById("sidebar");
+    let sidebarContentElement = document.getElementById("sidebar-content");
+    let sidebarCollapseButtonElement = document.querySelector(".sidebar-collapse-button");
+    let mainContentElement = document.querySelector(".main-content");
+    let sidebarCollapseButton = document.querySelector(".sidebar-collapse-button button");
+
+    if (sidebarElement.style.width >= "200px") {
+        sidebarContentElement.style.display = "none";
+        sidebarElement.style.width = "50px";
+        mainContentElement.style.left = "70px";
+        sidebarCollapseButton.textContent = "e";
+        sidebarCollapseButtonElement.style.left = "20px";
+    } else {
+        sidebarContentElement.style.display = "block";
+        sidebarElement.style.width = "230px";
+        mainContentElement.style.left = "250px";
+        sidebarCollapseButton.innerHTML = "<img src='images/left_arrow_button.png' width='10'>";
+        sidebarCollapseButtonElement.style.left = "200px";
+    }
+}
+
 
 
 

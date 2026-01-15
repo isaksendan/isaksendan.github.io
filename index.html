@@ -18,8 +18,12 @@
 </head>
 
 <body onload="gotoSection('my_research_text', 'my_research_title')">
-    <div class="sidebar">
-        <div class="sidebar-content">
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-collapse-button" id="sidebar-collapse-button">
+            <button type="button" onclick="toggleSidebar()"><img src="images/left_arrow_button.png" width="10"></button>
+        </div>
+
+        <div class="sidebar-content" id="sidebar-content">
             <header>
                 <span class="dan-isaksen"><b>Dan Isaksen</b></span>
                 <span class="description">Professor of mathematics</span>
@@ -36,21 +40,14 @@
                 <button type="button" onclick="gotoSection('about_me_text', 'about_me_title')">About me</button><br>
             </div>
             
-            <div class="sidebar-email" id ="sidebar-email">
-                <h3>Contact Me</h3>
-                <b>E-mail:</b> isaksen.dan@gmail.com
+            <div class="contact-me" id="contact-me">
+                <p><b>E-mail:</b> isaksen.dan@gmail.com</p>
+            </div>
+
+            <div class="headshot-image" id="headshot-image">
+                <img src="images/isaksen.jpg" width="150">
             </div>
         </div>
-        
-    </div>
-
-    <div class="contact-me" id="contact-me">
-        <h3>Contact Me</h3>
-        <p><b>E-mail:</b> isaksen.dan@gmail.com</p>
-    </div>
-
-    <div class="headshot-image" id="headshot-image">
-        <img src="images/isaksen.jpg" width="200">
     </div>
         
     <div class="main-content">
@@ -123,7 +120,7 @@
             <p>The chart below represents one possible approach to the problem of computing stable homotopy groups.
             Each dot represents a particular combination of spheres.  The lines indicate certain relationships
             between these different combinations.
-            <p><img src='images/Adamscharts.jpg' width='100%'>
+            <center><p><img src='images/Adamscharts.jpg' width='80%'></center>
             <p>I use a tool called the Adams spectral sequence to carry out these computations.  It is delicate,
             intricate, subtle, and complicated, but it is also understandable with enough insight and patience. 
             Each time we understand a new part of the machinery, another layer of complexities becomes accessible

@@ -9,16 +9,16 @@ body {
 a { color: #0366d6; }
 
 .contact-me {
-    position: fixed;
-    right: 20px;
-    top: 320px;
-    line-height: .5;
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    line-height: 1;
 }
 
 .headshot-image {
-    position: fixed;
-    top: 20px;
-    right: 40px;
+    position: absolute;
+    bottom: 60px;
+    left: 40px;
     text-align: center;
 }
 
@@ -34,6 +34,7 @@ a { color: #0366d6; }
 .sidebar-content {
     margin: 20px;
     color: rgb(0, 0, 0);
+    display: block;
 }
 
 .sidebar-email {
@@ -41,7 +42,7 @@ a { color: #0366d6; }
     position: absolute;
     left: 0px;
     bottom: 20px;
-    margin: 020px;
+    margin: 20px;
     display: none;
 }
 
@@ -54,11 +55,19 @@ a { color: #0366d6; }
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+.sidebar-collapse-button {
+    color: rgba(160, 160, 160, 1);
+    position: absolute;
+    top: 5px;
+    left: 200px;
+}
+
 .main-content {
     position: absolute;
     left: 250px;
+    top: 20px;
     max-width: 100%;
-    right: 300px;
+    right: 20px;
     margin-bottom: 40px;
 }
 
