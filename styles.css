@@ -46,20 +46,16 @@ a { color: #0366d6; }
     display: none;
 }
 
-.sidebar-separator {
-    position: absolute;
-    top: 0px;
-    left: 230px;
-    width: 3px;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3);
-}
-
 .sidebar-collapse-button {
-    color: rgba(160, 160, 160, 1);
     position: absolute;
     top: 5px;
     left: 200px;
+}
+
+.sidebar-collapse-button button {
+    cursor: pointer;
+    background: none;
+    border: none;
 }
 
 .main-content {

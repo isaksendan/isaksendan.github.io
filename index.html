@@ -17,10 +17,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body onload="gotoSection('my_research_text', 'my_research_title')">
-    <div class="sidebar" id="sidebar">
+<body onload="gotoSection('my_research_text', 'my_research_title'); resizeSidebarOnWindow()">
+    <div class="sidebar" id="sidebar" style="width: 230px;">
         <div class="sidebar-collapse-button" id="sidebar-collapse-button">
-            <button type="button" onclick="toggleSidebar()"><img src="images/left_arrow_button.png" width="10"></button>
+            <button type="button" onclick="toggleSidebar()"><img src="images/left_arrow_button.png" width="20"></button>
         </div>
 
         <div class="sidebar-content" id="sidebar-content">
@@ -30,8 +30,6 @@
                 <br><br>
             </header>
 
-            <div class="sidebar-separator"></div>
-            
             <div class="buttons">
                 <button type="button" onclick="gotoSection('my_research_text', 'my_research_title')">My Research</button><br>
                 <button type="button" onclick="gotoSection('motivic_homotopy_theory_text', 'motivic_homotopy_theory_title')">Motivic homotopy theory</button><br>
