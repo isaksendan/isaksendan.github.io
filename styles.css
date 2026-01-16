@@ -9,16 +9,14 @@ body {
 a { color: #0366d6; }
 
 .contact-me {
-    position: absolute;
-    left: 20px;
-    bottom: 10px;
-    line-height: 1;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .headshot-image {
-    position: absolute;
-    bottom: 60px;
-    left: 40px;
+    position: relative;
+    margin-top: 30px;
     text-align: center;
 }
 
@@ -35,6 +33,7 @@ a { color: #0366d6; }
     margin: 20px;
     color: rgb(0, 0, 0);
     display: block;
+    min-height: 500pxs;
 }
 
 .sidebar-email {
