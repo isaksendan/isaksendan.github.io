@@ -10,13 +10,13 @@ a { color: #0366d6; }
 
 .contact-me {
     position: relative;
-    margin-top: 10px;
+    margin-top: -15px;
     margin-left: 10px;
 }
 
 .headshot-image {
     position: relative;
-    margin-top: 30px;
+    margin-top: 20px;
     text-align: center;
 }
 
@@ -26,12 +26,12 @@ a { color: #0366d6; }
     left:  0px;
     height: 100vh;
     width: 230px;
-    background-color: rgba(160, 160, 160, 1)
+    background-color: rgba(60, 60, 60, 1)
 }
 
 .sidebar-content {
     margin: 20px;
-    color: rgb(0, 0, 0);
+    color: rgb(200, 200, 200);
     display: block;
     min-height: 500pxs;
 }
@@ -71,12 +71,25 @@ a { color: #0366d6; }
     text-align: center;
 }
 
-.buttons {
-    color: rgb(0, 0, 0);
+.buttons button{
+    color: rgb(200, 200, 200);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    color: rgb(120, 120, 120)
 }
 
 .dan-isaksen {
-    font-size: 30px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.description {
+    font-size: 12px;
+    text-align: center;
 }
 
 
