@@ -11,13 +11,13 @@ a { color: #0366d6; }
 .contact-me {
     position: relative;
     margin-top: -15px;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 .headshot-image {
     position: relative;
     margin-top: 20px;
-    text-align: center;
+    margin-left: 5px;
 }
 
 .sidebar {
@@ -48,13 +48,16 @@ a { color: #0366d6; }
 .sidebar-collapse-button {
     position: absolute;
     top: 5px;
-    left: 200px;
+    left: 195px;
 }
 
 .sidebar-collapse-button button {
     cursor: pointer;
     background: none;
     border: none;
+    color: rgb(200, 200, 200);
+    font-weight: 900;
+    font-size: 20px;
 }
 
 .main-content {
@@ -71,6 +74,10 @@ a { color: #0366d6; }
     text-align: center;
 }
 
+.buttons {
+    margin-top: -20px;
+}
+
 .buttons button{
     color: rgb(200, 200, 200);
     background: none;
@@ -83,6 +90,7 @@ a { color: #0366d6; }
 }
 
 .dan-isaksen {
+    margin-top: 40px;
     font-size: 25px;
     text-align: center;
 }

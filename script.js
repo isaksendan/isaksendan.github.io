@@ -17,14 +17,14 @@ function toggleSidebar() {
         sidebarContentElement.style.display = "none";
         sidebarElement.style.width = "30px";
         mainContentElement.style.left = "50px";
-        sidebarCollapseButton.innerHTML = "<img src='images/right_arrow_button.png' width='20'>";
-        sidebarCollapseButtonElement.style.left = "1px";
+        sidebarCollapseButton.innerHTML = "&#12297;";
+        sidebarCollapseButtonElement.style.left = "5px";
     } else {
         sidebarContentElement.style.display = "block";
         sidebarElement.style.width = "230px";
         mainContentElement.style.left = "250px";
-        sidebarCollapseButton.innerHTML = "<img src='images/left_arrow_button.png' width='20'>";
-        sidebarCollapseButtonElement.style.left = "200px";
+        sidebarCollapseButton.innerHTML = "&#12296;";
+        sidebarCollapseButtonElement.style.left = "195px";
     }
 }
 
@@ -41,14 +41,14 @@ function resizeSidebarOnWindow() {
         sidebarContentElement.style.display = "block";
         sidebarElement.style.width = "230px";
         mainContentElement.style.left = "250px";
-        sidebarCollapseButton.innerHTML = "<img src='images/left_arrow_button.png' width='20'>";
-        sidebarCollapseButtonElement.style.left = "200px";
+        sidebarCollapseButton.innerHTML = "&#12296;";
+        sidebarCollapseButtonElement.style.left = "195px";
     } else {
         sidebarContentElement.style.display = "none";
         sidebarElement.style.width = "30px";
         mainContentElement.style.left = "50px";
-        sidebarCollapseButton.innerHTML = "<img src='images/right_arrow_button.png' width='20'>";
-        sidebarCollapseButtonElement.style.left = "1px";
+        sidebarCollapseButton.innerHTML = "&#12297;";
+        sidebarCollapseButtonElement.style.left = "5px";
     }
 }
 window.addEventListener("resize", resizeSidebarOnWindow)

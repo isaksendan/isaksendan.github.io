@@ -1,7 +1,6 @@
 <!--
-    - add links to 'my research'
-    - make buttons seamless
-    - center name and description header
+    - put buttons into table?
+    - change background color?
 
 -->
 
@@ -18,20 +17,19 @@
 
     <style id='wp-block-table-inline-css' type='text/css'>
         .wp-block-table{overflow-x:auto}.wp-block-table table{border-collapse:collapse;width:100%}.wp-block-table thead{border-bottom:3px solid}.wp-block-table tfoot{border-top:3px solid}.wp-block-table td,.wp-block-table th{border:1px solid;padding:.5em}.wp-block-table .has-fixed-layout{table-layout:fixed;width:100%}.wp-block-table .has-fixed-layout td,.wp-block-table .has-fixed-layout th{word-break:break-word}.wp-block-table.aligncenter,.wp-block-table.alignleft,.wp-block-table.alignright{display:table;width:auto}.wp-block-table.aligncenter td,.wp-block-table.aligncenter th,.wp-block-table.alignleft td,.wp-block-table.alignleft th,.wp-block-table.alignright td,.wp-block-table.alignright th{word-break:break-word}.wp-block-table .has-subtle-light-gray-background-color{background-color:#f3f4f5}.wp-block-table .has-subtle-pale-green-background-color{background-color:#e9fbe5}.wp-block-table .has-subtle-pale-blue-background-color{background-color:#e7f5fe}.wp-block-table .has-subtle-pale-pink-background-color{background-color:#fcf0ef}.wp-block-table.is-style-stripes{background-color:initial;border-collapse:inherit;border-spacing:0}.wp-block-table.is-style-stripes tbody tr:nth-child(odd){background-color:#f0f0f0}.wp-block-table.is-style-stripes.has-subtle-light-gray-background-color tbody tr:nth-child(odd){background-color:#f3f4f5}.wp-block-table.is-style-stripes.has-subtle-pale-green-background-color tbody tr:nth-child(odd){background-color:#e9fbe5}.wp-block-table.is-style-stripes.has-subtle-pale-blue-background-color tbody tr:nth-child(odd){background-color:#e7f5fe}.wp-block-table.is-style-stripes.has-subtle-pale-pink-background-color tbody tr:nth-child(odd){background-color:#fcf0ef}.wp-block-table.is-style-stripes td,.wp-block-table.is-style-stripes th{border-color:#0000}.wp-block-table.is-style-stripes{border-bottom:1px solid #f0f0f0}.wp-block-table .has-border-color td,.wp-block-table .has-border-color th,.wp-block-table .has-border-color tr,.wp-block-table .has-border-color>*{border-color:inherit}.wp-block-table table[style*=border-top-color] tr:first-child,.wp-block-table table[style*=border-top-color] tr:first-child td,.wp-block-table table[style*=border-top-color] tr:first-child th,.wp-block-table table[style*=border-top-color]>*,.wp-block-table table[style*=border-top-color]>* td,.wp-block-table table[style*=border-top-color]>* th{border-top-color:inherit}.wp-block-table table[style*=border-top-color] tr:not(:first-child){border-top-color:initial}.wp-block-table table[style*=border-right-color] td:last-child,.wp-block-table table[style*=border-right-color] th,.wp-block-table table[style*=border-right-color] tr,.wp-block-table table[style*=border-right-color]>*{border-right-color:inherit}.wp-block-table table[style*=border-bottom-color] tr:last-child,.wp-block-table table[style*=border-bottom-color] tr:last-child td,.wp-block-table table[style*=border-bottom-color] tr:last-child th,.wp-block-table table[style*=border-bottom-color]>*,.wp-block-table table[style*=border-bottom-color]>* td,.wp-block-table table[style*=border-bottom-color]>* th{border-bottom-color:inherit}.wp-block-table table[style*=border-bottom-color] tr:not(:last-child){border-bottom-color:initial}.wp-block-table table[style*=border-left-color] td:first-child,.wp-block-table table[style*=border-left-color] th,.wp-block-table table[style*=border-left-color] tr,.wp-block-table table[style*=border-left-color]>*{border-left-color:inherit}.wp-block-table table[style*=border-style] td,.wp-block-table table[style*=border-style] th,.wp-block-table table[style*=border-style] tr,.wp-block-table table[style*=border-style]>*{border-style:inherit}.wp-block-table table[style*=border-width] td,.wp-block-table table[style*=border-width] th,.wp-block-table table[style*=border-width] tr,.wp-block-table table[style*=border-width]>*{border-style:inherit;border-width:inherit}
-        /*# sourceURL=https://s.wayne.edu/isaksen/wp-includes/blocks/table/style.min.css */
     </style>
 </head>
 
 <body onload="gotoSection('my_research_text', 'my_research_title'); resizeSidebarOnWindow()">
     <div class="sidebar" id="sidebar" style="width: 230px;">
         <div class="sidebar-collapse-button" id="sidebar-collapse-button">
-            <button type="button" onclick="toggleSidebar()"><img src="images/left_arrow_button.png" width="20"></button>
+            <button type="button" onclick="toggleSidebar()">&#12296;</button>
         </div>
 
         <div class="sidebar-content" id="sidebar-content">
             <header>
-                <span class="dan-isaksen"><b>DAN ISAKSEN</b></span>
-                <span class="description">PROFESSOR OF MATHEMATICS</span>
+                <div class="dan-isaksen"><b>DAN ISAKSEN</b></div>
+                <div class="description">PROFESSOR OF MATHEMATICS</div>
                 <br><br>
             </header>
 
@@ -504,9 +502,9 @@
                 </tbody>
             </table>'
             data-my_research_text='My main research interest is a long-term project to make fundamental computations in motivic
-            homotopy theory. This research is supported by a grant from the National Science Foundation.  This page summarizes
-            my research work for non-experts.  If you would like more detail, see my pages on motivic homotopy theory and other
-            research interests.
+            homotopy theory. This research is supported by a grant from the <a href="https://www.nsf.gov/">National Science
+            Foundation</a>.  This page summarizes my research work for non-experts.  If you would like more detail,
+            see my pages on motivic homotopy theory and other research interests.
             <p>Here is a quick introduction to the topic of my research, intended for undergraduate-educated scientists:
             <p><i>The geometric objects of interest in algebraic topology can be constructed by fitting together spheres of
             varying dimensions. The homotopy groups of spheres describe the ways in which spheres can be attached to
@@ -516,15 +514,22 @@
             counterintuitive fact that some high-dimensional spheres can be viewed in more than one way from the
             perspective of differentiability. We enumerate these differentiable structures through dimension 90,
             except for dimension 4.</i>
-            <p>This excerpt comes from the article <br>D. C. Isaksen, G. Wang, and Z. Xu, Stable homotopy groups of Spheres,
-            Proceedings of the National Academy Sciences, 2020.
-            <p>Here is a 10-minute video research statement in which I explain the overall ideas in my research program.
+            <p>This excerpt comes from the article <br><a href="https://www.pnas.org/doi/10.1073/pnas.2012335117">D. C. Isaksen, G. Wang, and Z. Xu, Stable homotopy groups of Spheres,
+            Proceedings of the National Academy Sciences, 2020</a>.
+            <p>Here is a 10-minute <a href="https://www.youtube.com/watch?v=1Lxl0opiqcA">video research statement</a> in which I explain the overall ideas in my research program.
             If you would like to see additional details, here are a few recorded presentations:
             <ul>
                 <li>Motivic and equivariant stable homotopy groups, Institut des Hautes Études Scientifiques (IHES),
-                    Paris, 2020 (online) Part 1Part 2 Part 3</li>
-                <li>Motivic nilpotence and periodicity, Reed College, Portland, August 2017</li>
-                <li>Computations in motivic homotopy theory, Mathematical Sciences Research Institute (MSRI), Berkeley, 2014</li>
+                    Paris, 2020 (online)
+                    <a href="https://www.youtube.com/watch?v=agL5m7t72VM&list=PLx5f8IelFRgH4gAYbetXZmpEx57y_R-fx&index=5&t=4s">
+                    Part 1</a>,
+                    <a href="https://www.youtube.com/watch?v=2DI1SeudKGs&list=PLx5f8IelFRgH4gAYbetXZmpEx57y_R-fx&index=12">Part 2</a>,
+                    and <a href="https://www.youtube.com/watch?v=UtZjxUMe7Tw&list=PLx5f8IelFRgH4gAYbetXZmpEx57y_R-fx&index=14">
+                    Part 3</a></li>
+                <li><a href="https://www.youtube.com/watch?v=vqArVx7VmU8&list=PLXkjpw90U4a0SPOmIYMGRcmQ3bSOrgSfH&index=7">
+                    Motivic nilpotence and periodicity</a>, Reed College, Portland, August 2017</li>
+                <li><a href="https://www.slmath.org/workshops/685/schedules/17893">
+                    Computations in motivic homotopy theory</a>, Mathematical Sciences Research Institute (MSRI), Berkeley, 2014</li>
             </ul>
             <p>The chart below represents one possible approach to the problem of computing stable homotopy groups.
             Each dot represents a particular combination of spheres.  The lines indicate certain relationships
@@ -541,7 +546,8 @@
             resolution of the field F2 over the Steenrod algebra, in homological degree 6 and internal degree 100,
             with respect to a certain ordering on the Milnor basis.  Click the image to see a larger version.  I
             recommend that you zoom in until you can see the individual pixels.  This picture was generated by Joey
-            Beauvais-Feisthauer, using data obtained from the SpectralSequences project.
+            Beauvais-Feisthauer, using data obtained from the <a href="https://github.com/SpectralSequences/sseq">
+            Spectral Sequences project</a>.
             <center><p><img src="images/mat_6_100-768x690.png" width="40%"></center>
             <p>Sometimes people (including mathematicians) ask how we are confident that our complicated, lengthy,
             and detailed computations are correct.  This is an excellent question that deserves careful
