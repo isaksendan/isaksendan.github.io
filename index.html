@@ -20,7 +20,7 @@
     </style>
 </head>
 
-<body onload="gotoSection('my_research_text', 'my_research_title'); resizeSidebarOnWindow()">
+<body onload="gotoSection('landing_text', 'landing_title'); resizeSidebarOnWindow()">
     <div class="sidebar" id="sidebar" style="width: 230px;">
         <div class="sidebar-collapse-button" id="sidebar-collapse-button">
             <button type="button" onclick="toggleSidebar()">&#12296;</button>
@@ -34,7 +34,7 @@
             </header>
 
             <div class="buttons">
-                <button type="button" onclick="gotoSection('my_research_text', 'my_research_title')">My Research</button><br>
+                <button type="button" onclick="gotoSection('landing_text', 'landing_title')">My Research</button><br>
                 <button type="button" onclick="gotoSection('motivic_homotopy_theory_text', 'motivic_homotopy_theory_title')">Motivic homotopy theory</button><br>
                 <button type="button" onclick="gotoSection('other_research_interests_text', 'other_research_interests_title')">Other research interests</button><br>
                 <button type="button" onclick="gotoSection('algebraic_topology_journals_text', 'algebraic_topology_journals_title')">Algebraic topology journals</button>
@@ -57,7 +57,7 @@
             data-motivic_homotopy_theory_title="Motivic homotopy theory"
             data-other_research_interests_title="Other research interests"
             data-algebraic_topology_journals_title="Algebraic topology journals"
-            data-my_research_title="My Research">
+            data-landing_title="Homotopy groups of spheres">
         </div>
 
         <br>
@@ -501,10 +501,29 @@
                     </tr>
                 </tbody>
             </table>'
-            data-my_research_text='My main research interest is a long-term project to make fundamental computations in motivic
-            homotopy theory. This research is supported by a grant from the <a href="https://www.nsf.gov/">National Science
-            Foundation</a>.  This page summarizes my research work for non-experts.  If you would like more detail,
-            see my pages on motivic homotopy theory and other research interests.
+            data-landing_text='My main research interest is to compute homotopy groups of spheres.
+            This research is supported by the <a href="https://www.nsf.gov/">National Science
+            Foundation</a> and the <a href="https://www.simonsfoundation.org">Simons Foundation</a>.  This page summarizes my research work for non-experts.  
+            <p>Here are some links to my professional information:
+            <ul>
+                <li><a href="https://isaksendan.github.io/cv.pdf">My curriculum vitae</a>
+                <li><a href="https://mathscinet.ams.org/mathscinet/author?authorId=611825">My publications on MathSciNet</a>
+                <li><a href="https://arxiv.org/search/?searchtype=author&query=Isaksen%2C+D+C">My preprints on arXiv</a>
+            </ul>
+            <p>Sometimes people (including mathematicians) ask how we are confident that our complicated, lengthy,
+            and detailed computations are correct.  This is an excellent question that deserves careful
+            consideration.  First of all, we rely on computer calculations whenever possible.  However,
+            eventually we want to go beyond what can be verified by computer.
+            <p>The different parts of the structure that we are calculating are linked in multiple complicated ways
+            with each other.  As a result, when we make a mistake, inconsistencies typically arise quickly with
+            other parts of the calculation.  This keeps us on the right track because the method itself catches
+            many errors.
+            <p>One possible analogy is to building a model of a ship.  Imagine having all of the parts of a
+            kit for building a ship, but no instructions.  With enough patience and attention to detail,
+            you might be able to figure out how to build the ship.  You might make mistakes along the way,
+            which you can correct later when you realize that other parts will not fit.  In the end, if you have
+            used all the parts, and the result floats in water, then you have probably built the model correctly.
+
             <p>Here is a quick introduction to the topic of my research, intended for undergraduate-educated scientists:
             <p><i>The geometric objects of interest in algebraic topology can be constructed by fitting together spheres of
             varying dimensions. The homotopy groups of spheres describe the ways in which spheres can be attached to
@@ -549,19 +568,6 @@
             Beauvais-Feisthauer, using data obtained from the <a href="https://github.com/SpectralSequences/sseq">
             Spectral Sequences project</a>.
             <center><p><img src="images/mat_6_100-768x690.png" width="40%"></center>
-            <p>Sometimes people (including mathematicians) ask how we are confident that our complicated, lengthy,
-            and detailed computations are correct.  This is an excellent question that deserves careful
-            consideration.  First of all, we rely on computer calculations whenever possible.  However,
-            eventually we want to go beyond what can be verified by computer.
-            <p>The different parts of the structure that we are calculating are linked in multiple complicated ways
-            with each other.  As a result, when we make a mistake, inconsistencies typically arise quickly with
-            other parts of the calculation.  This keeps us on the right track because the method itself catches
-            many errors.
-            <p>One possible analogy is to building a model of a ship.  Imagine having all of the parts of a
-            kit for building a ship, but no instructions.  With enough patience and attention to detail,
-            you might be able to figure out how to build the ship.  You might make mistakes along the way,
-            which you can correct later when you realize that other parts will not fit.  In the end, if you have
-            used all the parts, and the result floats in water, then you have probably built the model correctly.
             '>
         </div>
     </div>
