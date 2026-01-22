@@ -26,19 +26,19 @@
         <div class="sidebar-content" id="sidebar-content">
             <header>
                 <div class="dan-isaksen"><b>DAN ISAKSEN</b></div>
-                <div class="description">PROFESSOR OF MATHEMATICS</div>
+                <div class="description">PROFESSOR OF MATHEMATICS<br>WAYNE STATE UNIVERSITY</div></div>
                 <br><br>
             </header>
 
             <div class="buttons">
                 <table>
-                    <tr><td style="border-top: 1px solid rgb(120, 120, 120)"><button type="button" onclick="gotoSection('landing_text', 'landing_title')">My Research</button><br></td></tr>
-                    <tr><td><button type="button" onclick="gotoSection('motivic_homotopy_theory_text', 'motivic_homotopy_theory_title')">Motivic homotopy theory</button><br></td></tr>
-                    <tr><td><button type="button" onclick="gotoSection('other_research_interests_text', 'other_research_interests_title')">Other research interests</button><br></td></tr>
+                    <tr><td style="border-top: 1px solid rgb(120, 120, 120)"><button type="button" onclick="gotoSection('landing_text', 'landing_title')">Homotopy groups of spheres</button><br></td></tr>
+                    <tr><td><button type="button" onclick="gotoSection('research_images_text', 'research_images_title')">Research images</button><br></td></tr>
                     <tr><td><button type="button" onclick="gotoSection('algebraic_topology_journals_text', 'algebraic_topology_journals_title')">Algebraic topology journals</button><br></td></tr>
-                    <tr><td><button type="button" onclick="gotoSection('about_me_text', 'about_me_title')">About me</button><br></td></tr>
                     <tr><td><button onclick="window.open('cv.pdf', '_self')">Curriculum Vitae</button></td></tr>
-                    <tr><td><button onclick="window.open('https://www.ams.org/home/page')">American Mathematics Society</button><br></td></tr>
+                    <tr><td><button type="button" onclick="gotoSection('about_me_text', 'about_me_title')">About me</button><br></td></tr>
+                    <tr><td><button onclick="window.open('https://s.wayne.edu/echt', '_self')">eCHT</button><br></td></tr>
+                    <tr><td><button onclick="window.open('https://www.ams.org', '_self')">American Mathematical Society</button><br></td></tr>
                 </table>
                 
             </div>
@@ -56,38 +56,109 @@
     <div class="main-content">
         <div class="main-content-title" id="main-content-title"
             data-about_me_title="About me"
-            data-motivic_homotopy_theory_title="Motivic homotopy theory"
-            data-other_research_interests_title="Other research interests"
             data-algebraic_topology_journals_title="Algebraic topology journals"
+            data-research_images_title="Research images"
             data-landing_title="Homotopy groups of spheres">
         </div>
 
         <br>
         <div class="main-content-text" id="main-content-text"
+            data-landing_text='My main research interest is to compute homotopy groups of spheres.  Various
+            parts of this program have been supported by the <a href="https://www.nsf.gov/">National Science
+            Foundation</a> and the <a href="https://www.simonsfoundation.org">Simons Foundation</a>.  This page summarizes my research work for non-experts.  
+            <p>Here are some links to my professional information:
+            <ul>
+                <li><a href="https://isaksendan.github.io/cv.pdf">My curriculum vitae</a>
+                <li><a href="https://mathscinet.ams.org/mathscinet/author?authorId=611825">My publications on MathSciNet</a>
+                <li><a href="https://arxiv.org/search/?searchtype=author&query=Isaksen%2C+D+C">My preprints on arXiv</a>
+            </ul>
+            <p>Sometimes people (including mathematicians) ask how we are confident that our complicated, lengthy,
+            and detailed computations are correct.  This is an excellent question that deserves careful
+            consideration.  First of all, we rely on computer calculations whenever possible.  However,
+            eventually we want to go beyond what can be verified by computer.
+            <p>The different parts of the structure that we are calculating are linked in multiple complicated ways
+            with each other.  As a result, when we make a mistake, inconsistencies typically arise quickly with
+            other parts of the calculation.  This keeps us on the right track because the method itself catches
+            many errors.
+            <p>One possible analogy is to building a model of a ship.  Imagine having all of the parts of a
+            kit for building a ship, but no instructions.  With enough patience and attention to detail,
+            you might be able to figure out how to build the ship.  You might make mistakes along the way,
+            which you can correct later when you realize that other parts will not fit.  In the end, if you have
+            used all the parts, and the result floats in water, then you have probably built the model correctly.
+
+            <p>I use a tool called the Adams spectral sequence to carry out these computations.  It is delicate,
+            intricate, subtle, and complicated, but it is also understandable with enough insight and patience. 
+            Each time we understand a new part of the machinery, another layer of complexities becomes accessible
+            for further study.  By grappling with the difficulties of the Adams spectral sequence, we are widening
+            human knowledge and developing new skills for thinking about abstract mathematics.  Very recently, we have
+            begun to train computers to reason about spectral sequences as well.
+
+            <p>Here is a quick introduction to the topic of my research, intended for undergraduate-educated scientists:
+            <p><i>The geometric objects of interest in algebraic topology can be constructed by fitting together spheres of
+            varying dimensions. The homotopy groups of spheres describe the ways in which spheres can be attached to
+            each other. From the viewpoint of algebraic topology, detailed knowledge of these groups would lead to a
+            classification of geometric objects. We summarize the state of previous knowledge of the stable homotopy
+            groups of spheres through dimension 61 and provide information in dimensions 62 through 90. It is a highly
+            counterintuitive fact that some high-dimensional spheres can be viewed in more than one way from the
+            perspective of differentiability. We enumerate these differentiable structures through dimension 90,
+            except for dimension 4.</i>
+            <p>This excerpt comes from the article <br><a href="https://www.pnas.org/doi/10.1073/pnas.2012335117">D. C. Isaksen, G. Wang, and Z. Xu, Stable homotopy groups of Spheres,
+            Proceedings of the National Academy Sciences, 2020</a>.
+            <p>Here is a 10-minute <a href="https://www.youtube.com/watch?v=1Lxl0opiqcA">video research statement</a> in which I explain the overall ideas in my research program.
+            If you would like to see additional details, here are a few recorded presentations that are intended for experts:
+            <ul>
+                <li>Mathematical title, eCHT, 2021 (online)
+                    <a href="https://www.youtube.com/watch?v=3_ot6ahVGQg">Part 1</a>,
+                    <a href="https://www.youtube.com/watch?v=wXIkyH6ZjRQ">Part 2</a>,
+                    <a href="https://www.youtube.com/watch?v=JQD4p3k-0d4">Part 3</a>
+                    </li>
+                <li>Motivic and equivariant stable homotopy groups, Institut des Hautes Études Scientifiques (IHES),
+                    Paris, 2020 (online)
+                    <a href="https://www.youtube.com/watch?v=agL5m7t72VM&list=PLx5f8IelFRgH4gAYbetXZmpEx57y_R-fx&index=5&t=4s">
+                    Part 1</a>,
+                    <a href="https://www.youtube.com/watch?v=2DI1SeudKGs&list=PLx5f8IelFRgH4gAYbetXZmpEx57y_R-fx&index=12">Part 2</a>,
+                    and <a href="https://www.youtube.com/watch?v=UtZjxUMe7Tw&list=PLx5f8IelFRgH4gAYbetXZmpEx57y_R-fx&index=14">
+                    Part 3</a></li>
+                <li><a href="https://www.youtube.com/watch?v=vqArVx7VmU8&list=PLXkjpw90U4a0SPOmIYMGRcmQ3bSOrgSfH&index=7">
+                    Motivic nilpotence and periodicity</a>, Reed College, Portland, August 2017</li>
+                <li><a href="https://www.slmath.org/workshops/685/schedules/17893">
+                    Computations in motivic homotopy theory</a>, Mathematical Sciences Research Institute (MSRI), Berkeley, 2014</li>
+            </ul>
+            For experts only, I work extensively with various versions of the Adams spectral sequence, 
+            in C-motivic, R-motivic, C2-equivariant, classical stable, and classical unstable contexts.
+            Machines play an extensive role in carrying out these computations at scale.  Machines are used both
+            to compute algebraically defined Adams E2-pages, but also to carry out large quantities of deductions about
+            Adams differentials.  In this last regard, we are training computers to reason about spectral sequences.
+            '
             data-about_me_text="I grew up in Calabasas, California, USA.
             I have lived in California, Massachusetts, Ohio, Minnesota, Illinois, Indiana, and Michigan, as well as in Germany.
             <p>Currently I live with my family in the Detroit metropolitan area in Michigan, USA. I like superhero movies, 
             science fiction books, historical and geographical trivia, and scoring baseball games. I grew up a Dodgers fan, 
             but I am now a fully assimilated Tigers fan."
-            data-motivic_homotopy_theory_text="My research revolves around the interaction between homotopy theory and algebra.
-            One of my primary interests is motivic homotopy theory, which is a blend of classical homotopy theory and algebraic geometry.
-            The basic goal of this subject is to solve problems in algebraic geometry using traditional methods of algebraic topology.
-            <p>Currently, my main interest is a long-term project to make fundamental computations in motivic homotopy theory.
-            This research is supported by a grant from the National Science Foundation. I work extensively with the motivic version
-            of the Adams spectral sequence, especially over C and R. Massey products and Toda brackets are the essential computational
-            tools that I use to deduce information about the behavior of this spectral sequence, and ultimately about stable homotopy groups.
-            Computer calculations play a major role in this project. My collaborators on this project are Eva Belmont, Dan Dugger,
-            Bogdan Gheorghe, Bert Guillou, Hana Kong, Achim Krause, Guozhen Wang, and Zhouli Xu."
-            data-other_research_interests_text="In conjunction with Dan Dugger, I have generalized results about sums-of-squares
-            formulas over fields of characteristic zero so that they apply over arbitrary fields of characteristic not equal to 2.
-            The basic idea is to replace techniques involving cohomology theories for topological spaces with techniques involving
-            algebraic cohomology theories.
-            <p> I have also spent some time with Cayley-Dickson algebras. These are finite-dimensional
-            non-associative algebras that generalize the real numbers, the complex numbers, the quaternions, and the octonions.
-            In conjunction with Dan Dugger, Daniel Biss, and Dan Christensen, we have attempted to classify the zero-divisors in
-            Cayley-Dickson algebras.
-            <p> I used to be interested in abstract homotopy theory (i.e., model categories), especially
-            with respect to homotopy theories for pro-objects.  However, I am no longer actively working on problems in this field."
+            data-research_images_text='<p>The chart below represents one possible approach to the problem of computing stable homotopy groups.
+            Each dot represents a particular combination of spheres.  The lines indicate certain relationships
+            between these different combinations. Click the image to obtain a pdf version.  You can zoom in on fine detail
+            in the pdf.
+            <center>
+            <p><a href="images/Adamschart.pdf"><img src="images/Adamschart.jpg" width="80%"></a>
+            </center>
+            <hr>
+            <p>Much of my work is supported by large machine computations.  In essence, the machine computations
+            are specific linear algebra problems in very high dimensions.  The image below shows the reduced echelon
+            form of a particular matrix of size 10127 x 11267.  For experts, it is the differential in a minimal
+            resolution of the field F2 over the Steenrod algebra, in homological degree 6 and internal degree 100,
+            with respect to a certain ordering on the Milnor basis.  Click the image to see a larger version.  I
+            recommend that you zoom in until you can see the individual pixels.  This picture was generated by Joey
+            Beauvais-Feisthauer, using data obtained from the <a href="https://github.com/SpectralSequences/sseq">
+            Spectral Sequences project</a>.
+            <center>
+            <p><a href="images/mat_6_100.png"><img src="images/mat_6_100-768x690.png" width="40%"></a>
+            </center>
+            <hr>
+            <p>Recently, we have been studying the structure of unstable homotopy groups of spheres.  We are using both the
+            EHP-spectral sequence and the unstable Adams spectral sequence.  The image below is a small sample of the kinds of
+            rich data that we have obtained.
+            <center><p><img src="images/46stem.jpg" width="80%"></center>'
             data-algebraic_topology_journals_text='One key to successfully publishing a research article is to submit your work to
             an editor whose mathematical interests are close to the topic of your submission.  This page lists the names of journals
             whose editorial board includes at least one algebraic topologist.  I have found this list to be very useful in deciding
@@ -503,74 +574,7 @@
                     </tr>
                 </tbody>
             </table>'
-            data-landing_text='My main research interest is to compute homotopy groups of spheres.
-            This research is supported by the <a href="https://www.nsf.gov/">National Science
-            Foundation</a> and the <a href="https://www.simonsfoundation.org">Simons Foundation</a>.  This page summarizes my research work for non-experts.  
-            <p>Here are some links to my professional information:
-            <ul>
-                <li><a href="https://isaksendan.github.io/cv.pdf">My curriculum vitae</a>
-                <li><a href="https://mathscinet.ams.org/mathscinet/author?authorId=611825">My publications on MathSciNet</a>
-                <li><a href="https://arxiv.org/search/?searchtype=author&query=Isaksen%2C+D+C">My preprints on arXiv</a>
-            </ul>
-            <p>Sometimes people (including mathematicians) ask how we are confident that our complicated, lengthy,
-            and detailed computations are correct.  This is an excellent question that deserves careful
-            consideration.  First of all, we rely on computer calculations whenever possible.  However,
-            eventually we want to go beyond what can be verified by computer.
-            <p>The different parts of the structure that we are calculating are linked in multiple complicated ways
-            with each other.  As a result, when we make a mistake, inconsistencies typically arise quickly with
-            other parts of the calculation.  This keeps us on the right track because the method itself catches
-            many errors.
-            <p>One possible analogy is to building a model of a ship.  Imagine having all of the parts of a
-            kit for building a ship, but no instructions.  With enough patience and attention to detail,
-            you might be able to figure out how to build the ship.  You might make mistakes along the way,
-            which you can correct later when you realize that other parts will not fit.  In the end, if you have
-            used all the parts, and the result floats in water, then you have probably built the model correctly.
-
-            <p>Here is a quick introduction to the topic of my research, intended for undergraduate-educated scientists:
-            <p><i>The geometric objects of interest in algebraic topology can be constructed by fitting together spheres of
-            varying dimensions. The homotopy groups of spheres describe the ways in which spheres can be attached to
-            each other. From the viewpoint of algebraic topology, detailed knowledge of these groups would lead to a
-            classification of geometric objects. We summarize the state of previous knowledge of the stable homotopy
-            groups of spheres through dimension 61 and provide information in dimensions 62 through 90. It is a highly
-            counterintuitive fact that some high-dimensional spheres can be viewed in more than one way from the
-            perspective of differentiability. We enumerate these differentiable structures through dimension 90,
-            except for dimension 4.</i>
-            <p>This excerpt comes from the article <br><a href="https://www.pnas.org/doi/10.1073/pnas.2012335117">D. C. Isaksen, G. Wang, and Z. Xu, Stable homotopy groups of Spheres,
-            Proceedings of the National Academy Sciences, 2020</a>.
-            <p>Here is a 10-minute <a href="https://www.youtube.com/watch?v=1Lxl0opiqcA">video research statement</a> in which I explain the overall ideas in my research program.
-            If you would like to see additional details, here are a few recorded presentations:
-            <ul>
-                <li>Motivic and equivariant stable homotopy groups, Institut des Hautes Études Scientifiques (IHES),
-                    Paris, 2020 (online)
-                    <a href="https://www.youtube.com/watch?v=agL5m7t72VM&list=PLx5f8IelFRgH4gAYbetXZmpEx57y_R-fx&index=5&t=4s">
-                    Part 1</a>,
-                    <a href="https://www.youtube.com/watch?v=2DI1SeudKGs&list=PLx5f8IelFRgH4gAYbetXZmpEx57y_R-fx&index=12">Part 2</a>,
-                    and <a href="https://www.youtube.com/watch?v=UtZjxUMe7Tw&list=PLx5f8IelFRgH4gAYbetXZmpEx57y_R-fx&index=14">
-                    Part 3</a></li>
-                <li><a href="https://www.youtube.com/watch?v=vqArVx7VmU8&list=PLXkjpw90U4a0SPOmIYMGRcmQ3bSOrgSfH&index=7">
-                    Motivic nilpotence and periodicity</a>, Reed College, Portland, August 2017</li>
-                <li><a href="https://www.slmath.org/workshops/685/schedules/17893">
-                    Computations in motivic homotopy theory</a>, Mathematical Sciences Research Institute (MSRI), Berkeley, 2014</li>
-            </ul>
-            <p>The chart below represents one possible approach to the problem of computing stable homotopy groups.
-            Each dot represents a particular combination of spheres.  The lines indicate certain relationships
-            between these different combinations.
-            <center><p><img src="images/Adamscharts.jpg" width="80%"></center>
-            <p>I use a tool called the Adams spectral sequence to carry out these computations.  It is delicate,
-            intricate, subtle, and complicated, but it is also understandable with enough insight and patience. 
-            Each time we understand a new part of the machinery, another layer of complexities becomes accessible
-            for further study.  By grappling with the difficulties of the Adams spectral sequence, we are widening
-            human knowledge and developing new skills for thinking about abstract mathematics.
-            <p>Much of my work is supported by large machine computations.  In essence, the machine computations
-            are specific linear algebra problems in very high dimensions.  The image below shows the reduced echelon
-            form of a particular matrix of size 10127 x 11267.  For experts, it is the differential in a minimal
-            resolution of the field F2 over the Steenrod algebra, in homological degree 6 and internal degree 100,
-            with respect to a certain ordering on the Milnor basis.  Click the image to see a larger version.  I
-            recommend that you zoom in until you can see the individual pixels.  This picture was generated by Joey
-            Beauvais-Feisthauer, using data obtained from the <a href="https://github.com/SpectralSequences/sseq">
-            Spectral Sequences project</a>.
-            <center><p><img src="images/mat_6_100-768x690.png" width="40%"></center>
-            '>
+            >
         </div>
     </div>
 
