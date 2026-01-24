@@ -53,6 +53,20 @@ function resizeSidebarOnWindow() {
 }
 window.addEventListener("resize", resizeSidebarOnWindow)
 
+function checkQueryParameters() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const section = urlParams.get('section');
+    
+    if (section === 'algebraic_topoglogy_journals') {
+        gotoSection('algebraic_topology_journals_text', 'algebraic_topology_journals_title');
+    } else if (section === 'research_images') {
+        gotoSection('research_images_text', 'research_images_title');
+    } else if (section === 'about_me') {
+        gotoSection('about_me_text', 'about_me_title');
+    }
+}
+window.addEventListener('load', checkQueryParameters);
+
 
 
 

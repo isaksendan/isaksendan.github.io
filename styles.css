@@ -1,9 +1,9 @@
 body {
     font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: 0px;
-    padding: 20px;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(230, 230, 230)
 }
 
 a { color: #0366d6; }
@@ -12,6 +12,7 @@ a { color: #0366d6; }
     position: relative;
     margin-top: -15px;
     margin-left: 5px;
+    color: rgb(200, 200, 200)
 }
 
 .headshot-image {
@@ -22,11 +23,12 @@ a { color: #0366d6; }
 
 .sidebar {
     position: fixed;
-    top: 0px;
+    top: 0;
     left:  0px;
     height: 100vh;
     width: 230px;
-    background-color: rgba(60, 60, 60, 1)
+    background-color: rgba(60, 60, 60, 1);
+    overflow-y: auto;
 }
 
 .sidebar-content {
@@ -61,12 +63,16 @@ a { color: #0366d6; }
 }
 
 .main-content {
+    max-width: 800px;
     position: absolute;
-    left: 250px;
-    top: 20px;
+    left: 230px;
+    padding-left: 20px;
+    top: 0px;
+    padding-top: 20px;
     max-width: 100%;
-    right: 20px;
+    padding-right: 20px;
     margin-bottom: 40px;
+    min-height: 100vh;
 }
 
 .main-content-title {
@@ -75,7 +81,7 @@ a { color: #0366d6; }
 }
 
 .buttons {
-    margin-top: -20px;
+    margin-top: -50px;
 }
 
 .buttons table {
