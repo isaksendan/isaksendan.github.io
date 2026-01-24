@@ -19,7 +19,7 @@ function toggleSidebar() {
         mainContentElement.style.left = "50px";
         sidebarCollapseButton.innerHTML = "&#12297;";
         sidebarCollapseButtonElement.style.left = "5px";
-    } else {
+    } else if (sidebarElement.style.width === "30px") {
         sidebarContentElement.style.display = "block";
         sidebarElement.style.width = "230px";
         mainContentElement.style.left = "250px";

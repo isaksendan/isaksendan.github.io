@@ -12,13 +12,15 @@ a { color: #0366d6; }
     position: relative;
     margin-top: -15px;
     margin-left: 5px;
-    color: rgb(200, 200, 200)
+    color: rgb(200, 200, 200);
+    font-size: 14px;
+    text-align: center;
 }
 
 .headshot-image {
     position: relative;
     margin-top: 20px;
-    margin-left: 5px;
+    margin-left: 50px;
 }
 
 .sidebar {
@@ -32,10 +34,9 @@ a { color: #0366d6; }
 }
 
 .sidebar-content {
-    margin: 20px;
     color: rgb(200, 200, 200);
     display: block;
-    min-height: 500pxs;
+    padding-bottom: 30px;
 }
 
 .sidebar-email {
@@ -71,7 +72,7 @@ a { color: #0366d6; }
     padding-top: 20px;
     max-width: 100%;
     padding-right: 20px;
-    margin-bottom: 40px;
+    padding-bottom: 40px;
     min-height: 100vh;
 }
 
@@ -81,7 +82,7 @@ a { color: #0366d6; }
 }
 
 .buttons {
-    margin-top: -50px;
+    margin-top: 5px;
 }
 
 .buttons table {
@@ -107,7 +108,7 @@ a { color: #0366d6; }
 }
 
 .dan-isaksen {
-    margin-top: 40px;
+    margin-top: 20px;
     font-size: 25px;
     text-align: center;
 }
@@ -131,7 +132,6 @@ a { color: #0366d6; }
 }
 
 .main-content table thead th {
-    background-color: #f2f2f2;
     font-weight: bold;
     border-bottom: 2px solid #999;
 }
