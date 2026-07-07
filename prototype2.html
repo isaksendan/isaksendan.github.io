@@ -1,0 +1,691 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stable Homotopy</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #1f4e79;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card {
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.stem-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.stem-list > li {
+    margin-bottom: 18px;
+}
+
+.element-sublist {
+    margin-top: 8px;
+    margin-left: 30px;
+}
+
+.element-sublist li {
+    margin: 4px 0;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.section {
+    margin-top: 20px;
+}
+
+.tag {
+    display: inline-block;
+    background: #eef4ff;
+    color: #1f4e79;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-right: 4px;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+<div id="indexView">
+    <h1>Stable Homotopy</h1>
+    <ul id="stemList" class="stem-list"></ul>
+</div>
+
+<div id="elementView" class="hidden"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+
+<script>
+const elements = 
+
+[
+  {
+    "id": "1",
+    "name": "$1$",
+    "stem": 0,
+    "adamsFiltration": 0,
+    "adamsDetection": "$1$",
+    "adamsNovikovDetection": "$1$",
+    "adamsNovikovFiltration": 0,
+    "notes": [
+      "The identity element"
+    ],
+    "hashtags": [
+      "#identity", "#tmf"
+    ]
+  },
+  {
+    "id": "h0",
+    "name": "$2$",
+    "stem": 0,
+    "adamsFiltration": 1,
+    "adamsDetection": "$h_0$",
+    "adamsNovikovDetection": "$2$",
+    "adamsNovikovFiltration": 0,
+    "notes": [
+      "The zeroth Hopf map"
+    ],
+    "hashtags": [
+      "#Hopf", "#tmf"
+    ]
+  },
+  {
+    "id": "h0^2",
+    "name": "$4$",
+    "stem": 0,
+    "adamsFiltration": 2,
+    "adamsDetection": "$h_0^2$",
+    "adamsNovikovDetection": "$4$",
+    "adamsNovikovFiltration": 0,
+    "notes": [
+      "The zeroth Kervaire element $\\theta_0$"
+    ],
+    "hashtags": [
+      "#tmf"
+    ]
+  },
+  {
+    "id": "h1",
+    "name": "$\\eta$",
+    "stem": 1,
+    "adamsFiltration": 1,
+    "adamsDetection": "$h_1$",
+    "adamsNovikovDetection": "$\\alpha_1$",
+    "adamsNovikovFiltration": 1,
+    "notes": [
+      "The first Hopf map"
+    ],
+    "hashtags": [
+      "#Hopf", "#v1-periodic", "#tmf"
+    ]
+  },
+  {
+    "id": "h1^2",
+    "name": "$\\eta^2$",
+    "stem": 2,
+    "adamsFiltration": 2,
+    "adamsDetection": "$h_1^2$",
+    "adamsNovikovDetection": "$\\alpha_1^2$",
+    "adamsNovikovFiltration": 2,
+    "notes": [
+      "$\\langle 2, \\eta, 2 \\rangle$",
+      "The first Kervaire element $\\theta_1$"
+    ],
+    "hashtags": [
+      "#v1-periodic", "#tmf", "#Kervaire"
+    ]
+  },
+  {
+    "id": "h2",
+    "name": "$\\nu$",
+    "stem": 3,
+    "adamsFiltration": 1,
+    "adamsDetection": "$h_2$",
+    "adamsNovikovDetection": "$\\alpha_{2/2}$",
+    "adamsNovikovFiltration": 1,
+    "notes": [
+      "The second Hopf map"
+    ],
+    "hashtags": [
+      "#Hopf", "#v1-periodic", "#tmf"
+    ]
+  },
+  {
+    "id": "h0h2",
+    "name": "$2\\nu$",
+    "stem": 3,
+    "adamsFiltration": 2,
+    "adamsDetection": "$h_0h_2$",
+    "adamsNovikovDetection": "$\\alpha_{2}$",
+    "adamsNovikovFiltration": 1,
+    "notes": [
+      "$\\langle \\eta, 2, \\eta \\rangle$"
+    ],
+    "hashtags": [
+      "#v1-periodic", "#tmf"
+    ]
+  },
+  {
+    "id": "h1^3",
+    "name": "$\\eta^3$",
+    "stem": 3,
+    "adamsFiltration": 3,
+    "adamsDetection": "$h_1^3$",
+    "adamsNovikovDetection": "$\\alpha_1^3$",
+    "adamsNovikovFiltration": 3,
+    "notes": [
+      "$4 \\nu$"
+    ],
+    "hashtags": [
+      "#v1-periodic", "#tmf"
+    ]
+  },
+  {
+    "id": "h2^2",
+    "name": "$\\nu^2$",
+    "stem": 6,
+    "adamsFiltration": 2,
+    "adamsNovikovDetection": "$\\beta_{2/2}$",
+    "adamsNovikovFiltration": 2,
+    "adamsDetection": "$h_2^2$",
+    "notes": [
+      "The second Kervaire element $\\theta_2$"
+    ],
+    "hashtags": [
+      "#Kervaire", "#tmf"
+    ]
+  },
+  {
+    "id": "h3",
+    "name": "$\\sigma$",
+    "stem": 7,
+    "adamsFiltration": 1,
+    "adamsDetection": "$h_3$",
+    "adamsNovikovDetection": "$\\alpha_{4/4}$",
+    "adamsNovikovFiltration": 1,
+    "notes": [
+      "The third Hopf map"
+    ],
+    "hashtags": [
+      "#Hopf", "#v1-periodic"
+    ]
+  },
+  {
+    "id": "h0h3",
+    "name": "$2\\sigma$",
+    "stem": 7,
+    "adamsFiltration": 2,
+    "adamsNovikovDetection": "$\\alpha_{4/3}$",
+    "adamsNovikovFiltration": 1,
+    "notes": [
+      ""
+    ],
+    "hashtags": [
+      "#v1-periodic"
+    ]
+  },
+   {
+    "id": "h0^2h3",
+    "name": "$4\\sigma$",
+    "stem": 7,
+    "adamsFiltration": 3,
+    "adamsNovikovDetection": "$\\alpha_{4/2}$",
+    "adamsNovikovFiltration": 1,
+    "notes": [
+      ""
+    ],
+    "hashtags": [
+      "#v1-periodic"
+    ]
+  },
+   {
+    "id": "h0^3h3",
+    "name": "$8\\sigma$",
+    "stem": 7,
+    "adamsFiltration": 4,
+    "adamsNovikovDetection": "$\\alpha_{4}$",
+    "adamsNovikovFiltration": 1,
+    "notes": [
+      "$\\langle \\nu, 8, \\nu \\rangle$", 
+    ],
+    "hashtags": [
+      "#v1-periodic"
+    ]
+  },
+  {
+    "id": "h1h3",
+    "name": "$\\eta\\sigma$",
+    "stem": 8,
+    "adamsFiltration": 2,
+    "adamsDetection": "$h_1h_3$",
+    "adamsNovikovDetection": "$\\alpha_1 \\alpha_{4/4}$",
+    "adamsNovikovFiltration": 2,
+    "notes": [
+      "linearly dependent on $\\epsilon$ and $\\overline{\\nu}$"
+    ],
+    "hashtags": [
+      "#v1-periodic"
+    ]
+  },
+  {
+    "id": "c0",
+    "name": "$\\epsilon$",
+    "stem": 8,
+    "adamsFiltration": 3,
+    "adamsDetection": "$c_0$",
+    "adamsNovikovDetection": "$\\beta_2 + \\alpha_1 \\alpha_{4/4}$",
+    "adamsNovikovFiltration": 2,
+    "notes": [
+      "$\\langle \\eta, 2, \\nu^2 \\rangle$ = \\{ \\epsilon, \\overline{\\nu} \\}",
+      "$\\langle \\eta^2, 2, \\eta, \\nu \\rangle$",
+      "$\\langle \\eta^2, \\nu, \\eta, 2 \\rangle$",
+      "linearly dependent  on $\\eta \\sigma$ and $\\overline{\\nu}$"
+    ],
+    "hashtags": [
+      "#v1-periodic", "#tmf"
+    ]
+  },  
+  {
+    "id": "h2bar",
+    "name": "$\\overline{\\nu} = \\eta \\sigma + \\epsilon$",
+    "stem": 8,
+    "adamsFiltration": 2,
+    "adamsDetection": "$h_1h_3$",
+    "adamsNovikovDetection": "$\\beta_2$",
+    "adamsNovikovFiltration": 2,
+    "notes": [
+      "$\\langle \\nu, \\eta, \\nu \\rangle$",
+      "$\\eta \\sigma + \\epsilon$",
+      "linearly dependent on $\\eta \\sigma$ and $\\epsilon$",
+      "$\\langle \\eta, 2, \\nu^2 \\rangle = \\{ \\epsilon, \\overline{\\nu} \\}$"
+    ],
+    "hashtags": [
+      "#tmf"
+    ]
+  }, {
+    "id": "Ph1",
+    "name": "$\\mu_9$",
+    "stem": 9,
+    "adamsFiltration": 5,
+    "adamsDetection": "$P h_1",
+    "adamsNovikovDetection": "$\\alpha_{5}$",
+    "adamsNovikovFiltration": 1,
+    "notes": [
+      "$\\langle 8 \\sigma, 2, \\eta \\rangle$",
+      "$J_9$", 
+      "$P \\eta$"
+    ],
+    "hashtags": [
+      "#v1-periodic"
+    ]
+  },
+ 
+  {
+    "id": "Ph1^2",
+    "name": "$\\eta \\mu_9$",
+    "stem": 10,
+    "adamsFiltration": 6,
+    "adamsDetection": "$P h_1^2$",
+    "adamsNovikovDetection": "$\\alpha_1 \\alpha_5$",
+    "adamsNovikovFiltration": 2,
+    "notes": [
+      "$J_{10}$", 
+      "$P (\\eta^2)$"
+    ],
+    "hashtags": [
+      "#v1-periodic"
+    ]
+  },
+  {
+    "id": "Ph2",
+    "name": "$\\zeta_{11}$",
+    "stem": 11,
+    "adamsFiltration": 5,
+    "adamsDetection": "$P h_2$",
+    "adamsNovikovDetection": "$\\alpha_{6/2}$",
+    "adamsNovikovFiltration": 1,
+    "notes": [
+      "$\\langle 8 \\sigma, 2, \\nu \\rangle$",
+      "$\\overline{J}_{11}$",
+      "$P \\nu$"
+    ],
+    "hashtags": [
+      "#v1-periodic"
+    ]
+  },
+  {
+    "id": "Ph0h2",
+    "name": "$2 \\zeta_{11}$",
+    "stem": 11,
+    "adamsFiltration": 6,
+    "adamsDetection": "$P h_0 h_2$",
+    "adamsNovikovDetection": "$\\alpha_{6}$",
+    "adamsNovikovFiltration": 1,
+    "notes": [
+      "$P (2 \\nu)$",
+      "contained in $\\langle \\mu_9, 2, \\eta \\rangle$"
+    ],
+    "hashtags": [
+      "#v1-periodic"
+    ]
+  },
+  {
+    "id": "Ph1^3",
+    "name": "$\\eta^2 \\mu_9$",
+    "stem": 11,
+    "adamsFiltration": 7,
+    "adamsDetection": "$P h_1^3$",
+    "adamsNovikovDetection": "$\\alpha_1^2 \\alpha_5$",
+    "adamsNovikovFiltration": 3,
+    "notes": [
+      "$P (\\eta^3)$",
+      "$J_{11}$"
+    ],
+    "hashtags": [
+      "#v1-periodic"
+    ]
+  },
+  {
+    "id": "h3^2",
+    "name": "$\\sigma^2$",
+    "stem": 14,
+    "adamsFiltration": 2,
+    "adamsDetection": "$h_3^2$",
+    "adamsNovikovDetection": "$\\beta_{4/4}$",
+    "adamsNovikovFiltration": 2,
+    "notes": [
+      "The third Kervaire element"
+    ],
+    "hashtags": [
+      "#Kervaire"
+    ]
+  },
+  {
+    "id": "d0",
+    "name": "$\\kappa$",
+    "stem": 14,
+    "adamsFiltration": 4,
+    "adamsDetection": "$d_0$",
+    "adamsNovikovDetection": "$\\beta_{4/3}$",
+    "adamsNovikovFiltration": 2,
+    "notes": [
+      "$\\langle \\epsilon, 2, \\eta, \\nu \\rangle = \\langle \\epsilon, \\nu, \\eta, 2 \\rangle$"
+    ],
+    "hashtags": [
+      "#tmf"
+    ]
+  }
+]
+;
+
+
+function renderMath(container) {
+    if (typeof renderMathInElement !== "function") {
+        return;
+    }
+
+    renderMathInElement(container, {
+        delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false }
+        ],
+        throwOnError: false
+    });
+}
+
+function buildIndex() {
+    const stemList = document.getElementById("stemList");
+    stemList.innerHTML = "";
+
+    const stems = {};
+
+    elements.forEach(e => {
+        if (!stems[e.stem]) {
+            stems[e.stem] = [];
+        }
+        stems[e.stem].push(e);
+    });
+
+    Object.keys(stems)
+        .map(Number)
+        .sort((a, b) => a - b)
+        .forEach(stem => {
+            const li = document.createElement("li");
+
+            const title = document.createElement("strong");
+            title.textContent = `Stem ${stem}`;
+            li.appendChild(title);
+
+            const ul = document.createElement("ul");
+            ul.className = "element-sublist";
+
+            stems[stem].forEach(e => {
+                const item = document.createElement("li");
+
+                const link = document.createElement("a");
+                link.href = `#${e.id}`;
+                link.innerHTML = e.name;
+
+                item.appendChild(link);
+                ul.appendChild(item);
+            });
+
+            li.appendChild(ul);
+            stemList.appendChild(li);
+        });
+
+    renderMath(stemList);
+}
+
+
+function goToRandomElement() {
+    const randomIndex =
+        Math.floor(Math.random() * elements.length);
+
+    window.location.hash =
+        elements[randomIndex].id;
+}
+
+
+function renderElement(id) {
+    const index = elements.findIndex(x => x.id === id);
+    const e = elements[index];
+
+    if (!e) {
+        showIndex();
+        return;
+    }
+
+    const prev = index > 0 ? elements[index - 1] : null;
+    const next = index < elements.length - 1 ? elements[index + 1] : null;
+
+
+    document
+        .getElementById("indexView")
+        .classList.add("hidden");
+
+    const notes =
+        (e.notes || [])
+        .map(x => `<li>${x}</li>`)
+        .join("");
+
+    const tags =
+        (e.hashtags || [])
+        .map(x => `<span class="tag">${x}</span>`)
+        .join("");
+
+    const view =
+        document.getElementById("elementView");
+
+    
+    const navigation = `
+        <div style="
+            display:flex;
+            justify-content:space-between;
+            margin-top:15px;
+            margin-bottom:15px;
+        ">
+            <div>
+                ${prev
+                    ? `<a href="#${prev.id}">&larr; Previous element</a>`
+                    : ""}
+            </div>
+            <div>
+                ${next
+                    ? `<a href="#${next.id}">Next element &rarr;</a>`
+                    : ""}
+            </div>
+        </div>
+    `;
+
+    view.innerHTML = `
+
+
+
+
+
+
+        <div class="top-bar">
+            <a href="#" class="back-link">
+                ← Return to Index
+            </a>
+
+            <a
+                href="javascript:void(0)"
+                class="random-link"
+                onclick="goToRandomElement()">
+                Random element
+            </a>
+
+        </div>
+
+
+        ${navigation}
+
+        <div class="card">
+            <h2>${e.name}</h2>
+
+            <p>
+                <strong>Stem:</strong>
+                ${e.stem}
+            </p>
+
+            
+            <p>
+                <strong>Adams filtration:</strong>
+                ${e.adamsFiltration}
+            </p>
+
+            ${e.adamsDetection ? `
+            <p>
+                <strong>Adams detection:</strong>
+                ${e.adamsDetection}
+            </p>
+            ` : ""}
+
+            <p>
+                <strong>Adams-Novikov filtration:</strong>
+                ${e.adamsNovikovFiltration}
+            </p>
+
+            ${e.adamsNovikovDetection ? `
+            <p>
+                <strong>Adams-Novikov detection:</strong>
+                ${e.adamsNovikovDetection}
+            </p>
+            ` : ""}
+
+
+            <div class="section">
+                <h3>Notes</h3>
+                <ul>
+                    ${notes}
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>Tags</h3>
+                ${tags}
+            </div>
+        </div>
+    `;
+
+    view.classList.remove("hidden");
+    renderMath(view);
+}
+
+function showIndex() {
+    document
+        .getElementById("indexView")
+        .classList.remove("hidden");
+
+    document
+        .getElementById("elementView")
+        .classList.add("hidden");
+}
+
+function route() {
+    const hash =
+        window.location.hash.replace("#", "");
+
+    if (hash === "") {
+        showIndex();
+    } else {
+        renderElement(hash);
+    }
+}
+
+window.addEventListener("hashchange", route);
+
+window.addEventListener("load", () => {
+    buildIndex();
+    route();
+    renderMath(document.body);
+});
+</script>
+
+</body>
+</html>
